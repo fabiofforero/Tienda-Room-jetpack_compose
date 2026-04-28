@@ -9,5 +9,5 @@ data class Articulo(
     @PrimaryKey val codigo: String,
     val nombre: String,
     val descripcion: String,
-    @ColumnInfo(name = "precio_unitario") val precioUnitario: Double
+    @ColumnInfo(name = "precio_unitario") val precioUnitario: Int
 )

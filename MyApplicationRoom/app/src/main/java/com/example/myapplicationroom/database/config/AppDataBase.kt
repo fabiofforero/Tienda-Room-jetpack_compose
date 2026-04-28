@@ -7,7 +7,7 @@ import com.example.myapplicationroom.database.dao.VentaDao
 import com.example.myapplicationroom.database.entities.Articulo
 import com.example.myapplicationroom.database.entities.Venta
 
-@Database(entities = [Articulo::class, Venta::class], version = 1, exportSchema = false)
+@Database(entities = [Articulo::class, Venta::class], version = 2, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
     abstract fun articuloDao(): ArticuloDao
     abstract fun ventaDao(): VentaDao

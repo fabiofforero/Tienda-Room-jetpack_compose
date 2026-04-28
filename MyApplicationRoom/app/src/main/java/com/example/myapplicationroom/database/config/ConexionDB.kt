@@ -23,6 +23,7 @@ class ConexionDB {
                 AppDataBase::class.java,
                 "tienda_virtual_db"
             )
+                .fallbackToDestructiveMigration()
             return dataBase.build()
         }
     }

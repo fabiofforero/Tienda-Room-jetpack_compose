@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a09d5a8f-90e8-4f19-ab94-6eddf1f15833" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplicationRoom/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/config/AppDataBase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/config/AppDataBase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/config/ConexionDB.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/config/ConexionDB.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/entities/Articulo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/entities/Articulo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/entities/Venta.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/entities/Venta.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/models/VentaDetalle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/models/VentaDetalle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/repositories/TiendaRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/repositories/TiendaRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/viewModels/TiendaViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplicationRoom/app/src/main/java/com/example/myapplicationroom/database/viewModels/TiendaViewModel.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "fabiofforero"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/fabiofforero/APPP-Login-React-Native.git",
+    "accountId": "4f60ecd4-d89b-4c1d-860d-4eab37e8d25a"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="3CqtUPkiRpdxAxy11LpNJFjRsfn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/a.senior_tics2/AndroidStudioProjects/APPP-Login-React-Native"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a09d5a8f-90e8-4f19-ab94-6eddf1f15833" name="Changes" comment="" />
+      <created>1777124942762</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777124942762</updated>
+    </task>
+    <servers />
+  </component>
+</project>

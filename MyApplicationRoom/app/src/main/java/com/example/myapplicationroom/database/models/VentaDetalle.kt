@@ -8,7 +8,7 @@ data class VentaDetalle(
     @ColumnInfo(name = "articulo_id") val articuloId: String,
     @ColumnInfo(name = "nombre_articulo") val nombreArticulo: String,
     @ColumnInfo(name = "descripcion_articulo") val descripcionArticulo: String,
-    @ColumnInfo(name = "precio_unitario") val precioUnitario: Double,
+    @ColumnInfo(name = "precio_unitario") val precioUnitario: Int,
     val cantidad: Int,
-    val valor: Double
+    val valor: Int
 )

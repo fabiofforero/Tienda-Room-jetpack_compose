@@ -23,5 +23,5 @@ data class Venta(
     val grupo: Int,
     @ColumnInfo(name = "articulo_id") val articuloId: String,
     val cantidad: Int,
-    val valor: Double
+    val valor: Int
 )

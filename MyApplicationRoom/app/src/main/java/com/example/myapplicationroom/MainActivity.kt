@@ -40,7 +40,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myapplicationroom.database.viewModels.TiendaViewModel
 import com.example.myapplicationroom.ui.theme.MyApplicationRoomTheme
-import java.util.Locale
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -198,7 +197,7 @@ fun RegistrarArticuloScreen(
             label = { Text("Precio unitario") },
             modifier = Modifier.fillMaxWidth(),
             singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
         Spacer(modifier = Modifier.height(20.dp))
         Button(
@@ -352,7 +351,8 @@ fun ConsultarVentasScreen(
     val context = LocalContext.current
     val ventas by viewModel.ventasGrupo.collectAsState()
     val grupos by viewModel.grupos.collectAsState()
-    var grupo by rememberSaveable { mutableStateOf("") }
+    var menuGruposAbierto by remember { mutableStateOf(false) }
+    var grupoSeleccionado by rememberSaveable { mutableStateOf<Int?>(null) }
     var consultado by rememberSaveable { mutableStateOf(false) }
     val total = ventas.sumOf { it.valor }
 
@@ -369,22 +369,40 @@ fun ConsultarVentasScreen(
         )
         Spacer(modifier = Modifier.height(16.dp))
 
-        if (grupos.isNotEmpty()) {
+        if (grupos.isEmpty()) {
             Text(
-                text = "Grupos registrados: ${grupos.joinToString(separator = ", ")}",
+                text = "No hay grupos con ventas registradas.",
                 modifier = Modifier.fillMaxWidth()
             )
-            Spacer(modifier = Modifier.height(8.dp))
+        } else {
+            Box(modifier = Modifier.fillMaxWidth()) {
+                Button(
+                    onClick = { menuGruposAbierto = true },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = grupoSeleccionado?.let { "Grupo $it" } ?: "Seleccionar grupo"
+                    )
+                }
+                DropdownMenu(
+                    expanded = menuGruposAbierto,
+                    onDismissRequest = { menuGruposAbierto = false }
+                ) {
+                    grupos.forEach { grupoActual ->
+                        DropdownMenuItem(
+                            text = { Text("Grupo $grupoActual") },
+                            onClick = {
+                                grupoSeleccionado = grupoActual
+                                consultado = false
+                                menuGruposAbierto = false
+                                viewModel.limpiarConsulta()
+                            }
+                        )
+                    }
+                }
+            }
         }
 
-        OutlinedTextField(
-            value = grupo,
-            onValueChange = { grupo = it },
-            label = { Text("Grupo a consultar") },
-            modifier = Modifier.fillMaxWidth(),
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-        )
         Spacer(modifier = Modifier.height(12.dp))
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -392,12 +410,16 @@ fun ConsultarVentasScreen(
         ) {
             Button(
                 onClick = {
-                    consultado = true
-                    viewModel.consultarVentasPorGrupo(grupo) { mensaje ->
-                        Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show()
+                    val grupo = grupoSeleccionado
+                    if (grupo == null) {
+                        Toast.makeText(context, "Seleccione un grupo", Toast.LENGTH_SHORT).show()
+                    } else {
+                        consultado = true
+                        viewModel.consultarVentasPorGrupo(grupo)
                     }
                 },
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                enabled = grupos.isNotEmpty()
             ) {
                 Text("Consultar")
             }
@@ -445,8 +467,8 @@ fun ConsultarVentasScreen(
     }
 }
 
-private fun formatoMoneda(valor: Double): String {
-    return String.format(Locale.US, "%.2f", valor)
+private fun formatoMoneda(valor: Int): String {
+    return valor.toString()
 }
 
 @Preview(showBackground = true)

@@ -59,7 +59,7 @@ class TiendaViewModel(context: Context) : ViewModel() {
         val codigoLimpio = codigo.trim().uppercase()
         val nombreLimpio = nombre.trim()
         val descripcionLimpia = descripcion.trim()
-        val precio = precioTexto.trim().replace(',', '.').toDoubleOrNull()
+        val precio = precioTexto.trim().toIntOrNull()
 
         if (codigoLimpio.length != 3) {
             respuesta("El código debe tener exactamente 3 caracteres")
@@ -73,8 +73,8 @@ class TiendaViewModel(context: Context) : ViewModel() {
             respuesta("La descripción es obligatoria")
             return
         }
-        if (precio == null || precio <= 0.0) {
-            respuesta("El precio unitario debe ser mayor que cero")
+        if (precio == null || precio <= 0) {
+            respuesta("El precio unitario debe ser un número entero mayor que cero")
             return
         }
 
@@ -139,10 +139,9 @@ class TiendaViewModel(context: Context) : ViewModel() {
         }
     }
 
-    fun consultarVentasPorGrupo(grupoTexto: String, respuesta: (String) -> Unit) {
-        val grupo = grupoTexto.trim().toIntOrNull()
-        if (grupo == null || grupo <= 0) {
-            respuesta("Digite un grupo válido")
+    fun consultarVentasPorGrupo(grupo: Int) {
+        if (grupo <= 0) {
+            _ventasGrupo.value = emptyList()
             return
         }
 

@@ -30,7 +30,7 @@ class TiendaRepository(
     suspend fun guardarVenta(codigoArticulo: String, grupo: Int, cantidad: Int) {
         val articulo = articuloDao.getArticuloByCodigo(codigoArticulo)
             ?: throw IllegalArgumentException("El artículo seleccionado no existe")
-        val total = articulo.precioUnitario * cantidad
+        val total: Int = articulo.precioUnitario * cantidad
         ventaDao.saveVenta(
             Venta(
                 grupo = grupo,
